@@ -42,7 +42,7 @@ gem 'omniauth-cas', '~> 2.0'
 gem 'omniauth-github', '~> 1.4'
 gem 'omniauth-gitlab', '~> 1.0.2'
 gem 'omniauth-saml', '~> 1.10'
-gem 'gitlab-omniauth-openid-connect', '~>0.9.1', require: 'omniauth_openid_connect'
+gem 'gitlab-omniauth-openid-connect', '~>0.10.0', require: 'omniauth_openid_connect'
 gem 'omniauth', '~> 1.9'
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
 
