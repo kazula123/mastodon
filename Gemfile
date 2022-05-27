@@ -158,6 +158,6 @@ end
 gem 'concurrent-ruby', require: false
 gem 'connection_pool', require: false
 
-gem 'rucaptcha', git: 'https://github.com/huacnlee/rucaptcha', ref: '3e8361a06521c45811d1487cceb41dc524ab9b69', branch: 'main'
+gem 'rucaptcha'
 gem "sidekiq-statistic"
 gem 'xorcist', '~> 1.1'
