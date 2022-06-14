@@ -40,8 +40,8 @@ jobs:
           cache-from: type=registry,ref=mashirozx/mastodon:dev
           cache-to: type=inline
           tags: |
-            mashirozx/mastodon:dev
-            mashirozx/mastodon:dev-${{steps.vars.outputs.sha_short}}
+            kazula123/mastodon:dev
+            kazula123/mastodon:dev-${{steps.vars.outputs.sha_short}}
 
       # - name: ⚓ Build and push Docker images
       #   uses: docker/build-push-action@v1
