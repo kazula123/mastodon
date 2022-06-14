@@ -57,7 +57,5 @@ jobs:
           cache-to: type=inline
           # tags: mashirozx/mastodon:alpha
           tags: |
-            mashirozx/mastodon:alpha
             mashirozx/mastodon:latest
-            mashirozx/mastodon:latest-amd64
             mashirozx/mastodon:sha-${{steps.vars.outputs.sha_short}}
