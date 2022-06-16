@@ -37,7 +37,7 @@ jobs:
           build-args: |
             VARIANT=3.0-bullseye
             NODE_VERSION=14
-          cache-from: type=registry,ref=mashirozx/mastodon:dev
+          cache-from: type=registry,ref=kazula/mastodon:dev
           cache-to: type=inline
           tags: |
             kazula123/mastodon:dev
