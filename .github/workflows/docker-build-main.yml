@@ -53,7 +53,7 @@ jobs:
           #   arg1=value1
           #   arg2=value2
           platforms: linux/amd64,linux/arm64
-          cache-from: type=registry,ref=mashirozx/mastodon:latest
+          cache-from: type=registry,ref=kazula/mastodon:latest
           cache-to: type=inline
           # tags: mashirozx/mastodon:alpha
           tags: |
