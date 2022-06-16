@@ -52,7 +52,7 @@ jobs:
           # build-args: |
           #   arg1=value1
           #   arg2=value2
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           cache-from: type=registry,ref=kazula/mastodon:latest
           cache-to: type=inline
           # tags: mashirozx/mastodon:alpha
