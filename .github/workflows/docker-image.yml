@@ -9,7 +9,7 @@ on:
   pull_request:
     paths:
       - .github/workflows/docker-image.yml
-      - Dockerfile_origin
+      - Dockerfile_kazula
 jobs:
   build-image:
     runs-on: ubuntu-latest
