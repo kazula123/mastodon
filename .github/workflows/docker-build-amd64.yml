@@ -1,0 +1,63 @@
+name: Build amd64 Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.commits.*.message, '[skip ci]') && !contains(github.event.commits.*.message, '[ci skip]') }}
+
+    steps:
+      - name: 🔍 Checkout code
+        uses: actions/checkout@v2
+        
+      - name: 🦄 Set up Qemu for Docker
+        uses: docker/setup-qemu-action@v1
+
+      - name: 🏗️ Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: 🔑 Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: 🎃 Setup outputs
+        id: vars
+        run: |
+          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+          
+      - name: 👻 Setup metadata
+        uses: docker/metadata-action@v3
+        id: meta
+        with:
+          images: kazula123/mastodon
+          flavor: |
+            latest=auto
+          tags: |
+            type=edge,branch=main
+            type=match,pattern=v(.*),group=0
+            type=ref,event=pr
+
+      - name: ⚓ Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile.slim
+          pull: true
+          push: true
+          platforms: linux/amd64
+          cache-from: type=registry,ref=kazula/mastodon:latest
+          cache-to: type=inline
+          tags: |
+<<<<<<< HEAD:.github/workflows/docker-build-main.yml
+            kazula123/mastodon:latest
+            kazula123/mastodon:sha-${{steps.vars.outputs.sha_short}}
+=======
+            mashirozx/mastodon:latest-amd64
+            mashirozx/mastodon:sha-${{steps.vars.outputs.sha_short}}-amd64
+>>>>>>> 76ac4f5a220bc8a42ac1ca785eed7f646d2a2834:.github/workflows/docker-build-amd64.yml

@@ -40,6 +40,7 @@ jobs:
           cache-from: type=registry,ref=kazula/mastodon:dev
           cache-to: type=inline
           tags: |
+<<<<<<< HEAD
             kazula123/mastodon:dev
             kazula123/mastodon:dev-${{steps.vars.outputs.sha_short}}
 
@@ -50,3 +51,7 @@ jobs:
       #     password: ${{ secrets.DOCKER_PASSWORD }}
       #     repository: mashirozx/mastodon
       #     tags: alpha
+=======
+            mashirozx/mastodon:dev
+            mashirozx/mastodon:dev-${{steps.vars.outputs.sha_short}}
+>>>>>>> 76ac4f5a220bc8a42ac1ca785eed7f646d2a2834
