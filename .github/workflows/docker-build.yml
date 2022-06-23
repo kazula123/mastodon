@@ -53,8 +53,8 @@ jobs:
           cache-from: type=registry,ref=kazula123/mastodon:latest
           cache-to: type=inline
           tags: |
-            mashirozx/mastodon:latest
-            mashirozx/mastodon:sha-${{steps.vars.outputs.sha_short}}
+            kazula123/mastodon:latest
+            kazula123/mastodon:sha-${{steps.vars.outputs.sha_short}}
 
       - name: 🔖 Update repo description
         uses: peter-evans/dockerhub-description@v2
