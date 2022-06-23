@@ -51,7 +51,7 @@ jobs:
           pull: true
           push: true
           platforms: linux/amd64
-          cache-from: type=registry,ref=kazula/mastodon:latest
+          cache-from: type=registry,ref=kazula123/mastodon:latest
           cache-to: type=inline
           tags: |
             kazula123/mastodon:latest
