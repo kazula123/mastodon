@@ -54,10 +54,6 @@ jobs:
           cache-from: type=registry,ref=kazula/mastodon:latest
           cache-to: type=inline
           tags: |
-<<<<<<< HEAD:.github/workflows/docker-build-main.yml
             kazula123/mastodon:latest
             kazula123/mastodon:sha-${{steps.vars.outputs.sha_short}}
-=======
-            mashirozx/mastodon:latest-amd64
-            mashirozx/mastodon:sha-${{steps.vars.outputs.sha_short}}-amd64
->>>>>>> 76ac4f5a220bc8a42ac1ca785eed7f646d2a2834:.github/workflows/docker-build-amd64.yml
+
