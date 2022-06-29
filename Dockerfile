@@ -127,3 +127,4 @@ RUN cd ~ && \
 WORKDIR /opt/mastodon
 ENTRYPOINT ["/usr/bin/tini", "--"]
 EXPOSE 3000 4000
+
