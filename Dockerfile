@@ -114,8 +114,8 @@ USER mastodon
 
 
 RUN echo "修改媒体上限" \
-  && sed -i "s|MAX_IMAGE_PIXELS = 2073600|MAX_IMAGE_PIXELS = 9999999|" /opt/mastodon/app/javascript/mastodon/utils/resize_image.js \
-  && sed -i "s|pixels: 2_073_600|pixels: 9_999_999|" /opt/mastodon/app/models/media_attachment.rb \
+  && sed -i "s|MAX_IMAGE_PIXELS = 2073600|MAX_IMAGE_PIXELS = 19999999|" /opt/mastodon/app/javascript/mastodon/utils/resize_image.js \
+  && sed -i "s|pixels: 2_073_600|pixels: 19_999_999|" /opt/mastodon/app/models/media_attachment.rb \
     && echo "允许站长查看私信" \
   && sed -i "s|@account, filter_params|@account, filter_params, current_account\.username|" /opt/mastodon/app/controllers/admin/statuses_controller.rb \
   && sed -i "s|account, params|account, params, current_username = ''|" /opt/mastodon/app/models/admin/status_filter.rb \
