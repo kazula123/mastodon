@@ -112,7 +112,7 @@ ENV BIND="0.0.0.0"
 # Set the run user
 USER mastodon
 
-
+#custom mod from moe
 RUN  echo "修改客户端 API" \
   && sed -i "s|:settings|:settings, :max_toot_chars|" /opt/mastodon/app/serializers/initial_state_serializer.rb \
   && sed -i "s|private|def max_toot_chars\n    StatusLengthValidator::MAX_CHARS\n  end\n\n  private|" /opt/mastodon/app/serializers/initial_state_serializer.rb \
